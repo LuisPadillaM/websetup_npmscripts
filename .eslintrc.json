@@ -1,0 +1,84 @@
+{
+    // "extends": "google",
+    "root": true,
+    // "extends": ["plugin:react/recommended","plugin:node/recommended"],
+        "extends": ["plugin:react/recommended"],
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        //+++++++Possible Errors+++++++
+        "no-cond-assign": "error",
+        "no-duplicate-case": "error",
+        "no-dupe-args": "error",
+        "no-extra-boolean-cast": "error",
+        "no-extra-semi": "error",
+        "no-empty":"error",
+        "no-delete-var": "error",
+        "no-redeclare": "error",
+        "no-regex-spaces": "error",
+        "no-unreachable": "error",
+        //+++++++Best practices+++++++
+        "curly": "error",
+        "eqeqeq": ["error", "smart"],
+        "dot-location": ["error", "property"],
+        "dot-notation": "error",
+        "no-case-declarations": "warn",
+        "no-octal": "error",
+        "no-with": "error",
+        "yoda": "error",
+
+        //+++++++Stylistic Issues+++++++
+        "array-bracket-spacing": ["error", "never"],
+        "camelcase": "warn",
+        "comma-dangle": ["error", "never"],
+        "comma-spacing": ["error", { "before": false, "after": true }],
+        "block-spacing": "error",
+        "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+        "indent": ["error", 2, { "VariableDeclarator":  { "var": 2, "let": 3, "const": 3 }, "SwitchCase": 1 }],
+        "key-spacing": ["error", { "afterColon": true }],
+        "keyword-spacing": ["error", { "before": true,  "after": true }],
+        "new-parens": "error",
+        "no-multi-spaces": "error",
+        "spaced-comment": ["error", "always", {
+            "line": {
+                "markers": ["/"],
+                "exceptions": ["-", "+"]
+            },
+            "block": {
+                "markers": ["!"],
+                "exceptions": ["+*"],
+                "balanced": true
+            }
+        }],
+        "space-in-parens": ["error", "never"],
+        "space-infix-ops": "error",
+        // "quotes": ["error", "double"],
+        "wrap-regex": "warn",
+
+        //+++++++ECMAScript 6+++++++
+        // "arrow-body-style": ["error", "always"],
+        "constructor-super": "error",
+        "no-this-before-super": "error",
+        "prefer-const": "warn"
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "es6": true,
+        "mocha": true,
+        "jquery": true
+    },
+    "globals": {
+        "$": false
+    },
+    "plugins": [
+      "react",
+      "node"
+    ]
+}
