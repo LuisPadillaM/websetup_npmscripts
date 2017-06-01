@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/node,macos,linux,windows
 
 ### Linux ###
@@ -125,4 +124,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/node,macos,linux,windows
+#App ignores
+dist/

@@ -1,4 +1,5 @@
 import path from 'path';
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export default {
   devtool: 'inline-source-map',
@@ -15,12 +16,19 @@ export default {
     assets: true,
     errors: true
   },
+  plugins: [
+    // Create HTML file that includes reference to bundled JS
+    new HtmlWebpackPlugin({
+      template: "src/index.html",
+      inject: true
+    })
+  ],
   module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: [
-          path.resolve(__dirname, "/node_modules/")
+        include: [
+          path.resolve(__dirname, "src")
         ],
         loader: 'babel-loader',
         options: {
@@ -29,14 +37,14 @@ export default {
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: ['style-loader', 'css-loader']
+      },
+      {
+
+        test: /\.(jpg|jpeg|gif|png)$/,
+        exclude: [path.resolve(__dirname, "node_modules/")],
+        loader: "url-loader?limit=100"
       }
     ]
-  },
-  resolve: {
-    extensions: [".js", ".json", ".jsx", ".css"]
   }
 }
